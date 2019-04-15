@@ -1,119 +1,207 @@
-var questionsAnswers = [{
-        question: "In what movie does Brad Pitt play Lieutenant Aldo Raine?",
-        answers: {
+window.onload = function () {
 
-            a: "Inglorious Basterds",
-            b: "Fight Club",
-            c: " Bastard Out Of Carolina",
-            d: "The Departed",
+    var options = [{
+            question: "In what movie does Brad Pitt play Lieutenant Aldo Raine?",
+            choices: ["Inglorious Basterds", "Fight Club", " Bastard Out Of Carolina", "The Departed"],
+            answer: 0,
+            photo: "assets/images/IngloriousBasterds.gif"
         },
-
-        correctAnswer: "a",
-
-    },
-    {
-        question: "In what movie does Bill say, \"I'm a killer, a murdering bastard, and there are consequences to breaking the heart of a murdering bastard \"?",
-        answers: {
-            a: "Bill and Ted's Excellent Adventure",
-            b: "The Bill Collector",
-            c: "Kill Bill Vol. 2",
-            d: "The Great Adventures of Wild Bill Hickock",
+        {
+            question: "In what movie does Bill say, \"I'm a killer, a murdering bastard, and there are consequences to breaking the heart of a murdering bastard \"?",
+            choices: ["Bill and Ted's Excellent Adventure", "The Bill Collector", "Kill Bill Vol. 2", "The Great Adventures of Wild Bill Hickock"],
+            answer: 2,
+            photo: "assets/images/KillBill.gif"
         },
-        correctAnswer: "c",
-
-    },
-    {
-        question: "In the HBO Television Series Game of Thrones who said, \"I have a tender spot in my heart for cripples, bastards and broken things\"?",
-        answers: {
-            a: "Sansa Stark",
-            b: "Tyrion Lannister",
-            c: "Cercei Lannister",
-            d: "Jaime Lannister",
+        {
+            question: "In the HBO Television Series Game of Thrones who said, \"I have a tender spot in my heart for cripples, bastards and broken things\"?",
+            choices: ["Sansa Stark", "Tyrion Lannister", "Cercei Lannister", "Jaime Lannister"],
+            answer: 1,
+            photo: "assets/images/Tyrion.gif"
         },
-        correct: "b",
-
-    },
-    {
-        question: "Which of these is a Shakespearean quote?",
-        answers: {
-            a: "\"The bastard brains with these proper hands shall I dash out\".",
-            b: "\"I should of been that I am, had the maidenliest star in the firmament twinkled on my bastardizing\".",
-            c: "\"I am a bastard too, I love bastards.\".",
-            d: "All of the above.",
+        {
+            question: "Which of these is a Shakespearean quote?",
+            choices: ["\"The bastard brains with these proper hands shall I dash out\".", "\"I should of been that I am, had the maidenliest star in the firmament twinkled on my bastardizing\".", "\"I am a bastard too, I love bastards.\".", "All of the above."],
+            answer: 3,
+            photo: "assets/images/shakespeare.gif"
         },
-        correct: "d",
-
-    },
-    {
-        question: "Name that movie: \"Little bastard shot me in the ass\".",
-        answers: {
-            a: "Blazing Saddles",
-            b: "Willy Wonka and the Chocolate Factory",
-            c: "Robin Hood: Men In Tights",
-            d: "Young Frankenstein",
+        {
+            question: "Name that movie: \"Little bastard shot me in the ass\".",
+            choices: ["Blazing Saddles", "Willy Wonka and the Chocolate Factory", "Robin Hood: Men In Tights", "Young Frankenstein"],
+            answer: 0,
+            photo: "assets/images/BlazingSaddles.gif"
         },
-        correct: "a",
-
-    },
-    {
-        question: "What movie is this argument from: \"Albert: Don’t use that tone to me. - Armand: What tone? - Albert : That sarcastic contemptuous tone.That means you know everything because you’re a man, and I know nothing because I’m a woman. - Armand: You’re not a woman. - Albert: Oh, you bastard!\"?",
-        answers: {
-            a: "Hedwig and the Angry Itch",
-            b: "Birdcage",
-            c: "To Wong Foo, Thanks for Everything! Julie Newmar",
-            d: "Die Hard",
+        {
+            question: "What movie is this argument from: \"A: Don’t use that tone to me. - Ar: What tone? - A: That sarcastic contemptuous tone.That means you know everything because you’re a man, and I know nothing because I’m a woman. - Ar: You’re not a woman. - A: Oh, you bastard!\"?",
+            choices: ["Hedwig and the Angry Itch", "Birdcage", "To Wong Foo, Thanks for Everything! Julie Newmar", "Die Hard"],
+            answer: 1,
+            photo: "assets/images/Birdcage.gif"
         },
-        correct: "b",
-
-    },
-    {
-        question: "Complete this quote from the BBC television show The I.T. Crowd: \"People, what a bunch of _______\".",
-        answers: {
-            a: "fudge dragons!",
-            b: "marshmallows!",
-            c: "snowflakes!",
-            d: "bastards!",
+        {
+            question: "Complete this quote from the BBC television show The I.T. Crowd: \"People, what a bunch of _______\".",
+            choices: ["fudge dragons!", "marshmallows!", "snowflakes!", "bastards!"],
+            answer: 3,
+            photo: "assets/images/I.T.Crowd.gif"
         },
-        correct: "d",
-
-    },
-    {
-        question: "Which amazing Monty Python movie was this famous quote from: \"You lucky, lucky bastard...Proper little jailer's pet, aren't we!\"",
-        answers: {
-            a: "Life of Brian",
-            b: "Monty Python and the Holy Grail",
-            c: "The Meaning of Life",
-            d: "And Now For Something Completely Different",
+        {
+            question: "Which amazing Monty Python movie was this famous quote from: \"You lucky, lucky bastard...Proper little jailer's pet, aren't we!\"",
+            choices: ["Life of Brian", "Monty Python and the Holy Grail", "The Meaning of Life", "And Now For Something Completely Different"],
+            answer: 0,
+            photo: "assets/images/LifeOfBrian.gif"
         },
-        correct: "a",
-
-    },
-    {
-        question: "What police film is this quote from: \"You don't mind a bit of manpower, do ya Doris?...[laughing] Oh, dirty bastard!\"",
-        answers: {
-            a: "Let's Be Cops",
-            b: "Zootopia",
-            c: "Super Troopers",
-            d: "Hot Fuzz",
+        {
+            question: "What police film is this quote from: \"You don't mind a bit of manpower, do ya Doris?...[laughing] Oh, dirty bastard!\"",
+            choices: ["Let's Be Cops", "Zootopia", "Super Troopers", "Hot Fuzz"],
+            answer: 3,
+            photo: "assets/images/HotFuzz.gif"
         },
-        correct: "d",
-        
-    },
-];
+    ];
 
-var quizContainer = document.getElementById('quiz');
-var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit');
+    var correctCount = 0;
+    var wrongCount = 0;
+    var unansweredCount = 0;
+    var timer = 30;
+    var intervalId;
+    var userGuess = "";
+    var running = false;
+    var qCount = options.length;
+    var pick;
+    var index;
+    var newArray = [];
+    var holder = [];
+
+
+    $("#reset").hide();
+
+    $("#start").on("click", function () {
+
+        $("#start").hide();
+        displayQuestion();
+        runTimer();
+        for (var i = 0; i < options.length; i++) {
+            holder.push(options[i]);
+        }
+
+    })
+
+    function runTimer() {
+        if (!running) {
+            intervalId = setInterval(decrement, 1000);
+            running = true;
+        }
+    }
+
+    function decrement() {
+        $("#timeLeft").html("<h3>Time remaining: " + timer + "</h3>");
+        timer--;
+
+        if (timer === 0) {
+            unansweredCount++;
+            stop();
+            $("#answerBlock").html("<p>Time is up! The correct answer is: " + pick.choices[pick.answer] + "</p>")
+            hideGif();
+        }
+    }
+
+    function stop() {
+        running = false;
+        clearInterval(intervalId);
+    }
+
+    function displayQuestion() {
+        index = Math.floor(Math.random() * options.length);
+        pick = options[index];
+
+        $("#questionBlock").html("<h2>" + pick.question + "</h2>");
+        for (var i = 0; i < pick.choices.length; i++) {
+            var userChoice = $("<div>");
+            userChoice.addClass("answerChoice");
+            userChoice.html(pick.choices[i]);
+            userChoice.attr("data-guessValue", i);
+            $("#answerBlock").append(userChoice);
+        }
+
+    }
+
+    $(".answerChoice").on("click", function() {
+        userGuess = parseInt($(this).attr("data-guessValue"));
+        if (userGuess === pick.answer) {
+            stop();
+            correctCount++;
+            userGuess = "";
+            $("#answerBlock").html("<p>Not likely! The correct answer is: " + pick.choices[pick.answer] + "</p>");
+            hideGif();
+        }
+
+    })
+
+    function hideGif() {
+        $("#answerBlock").append("<img src=" + pick.photo + ">");
+        newArray.push(pick);
+        options.splice(index, 1);
+
+        var hideGif = setTimeout(function () {
+            $("#answerBlock").empty();
+            timer = 30;
+
+            if ((wrongCount + correctCount + unansweredCount) === qCount) {
+                $("#questionBlock").empty();
+                $("#questionBlock").html("<h3> Game Over! Here's your score: </h3>");
+                $("#questionBlock").append("<h4> You right!: " + correctCount + "</h4>");
+                $("#questionBlock").append("<h4> It's a NO from me: " + wrongCount + "</h4>");
+                $("#questionBlock").append("<h4> Come on! You didn't even try!: " + unansweredCount + "</h4>");
+                $("#reset").show();
+
+                correctCount = 0;
+                wrongCount = 0;
+                unansweredCount = 0;
+            } else {
+                runTimer();
+                displayQuestion();
+            }
+        }, 3000);
+
+    }
+
+    $("#reset").on("click", function () {
+            $("#reset").hide();
+            $("#answerBlock").empty();
+            $("#questionBlock").empty();
+
+            for (var i = 0; i < holder.length; i++);
+            options.push(holder[i]);
+        })
+        runTimer();
+    displayQuestion();
+
+    
+}
 
 
 
 
-function buildQuiz() {}
 
-function showResults() {}
 
-// display quiz right away
-buildQuiz();
 
-// on submit, show results
-submitButton.addEventListener('click', showResults);
+
+
+
+
+
+
+
+
+
+// var container = document.getElementById("#container");
+
+// for (var i = 0; i < questionsAnswers.length; i++);
+// var questionContainer = document.createElement('DIV');
+
+// questionContainer.textContent = questionsAnswers[i].question;
+
+// var options = questionsAnswers[i].choices;
+// for (var opt in options) {
+//     // $('<input type="radio" name="radiobtn"> ')
+
+//     console.log(options)
+// }
+// container.appendChild(questionContainer);

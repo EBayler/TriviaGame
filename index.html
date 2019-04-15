@@ -3,24 +3,36 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width">
 
-        <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-              crossorigin="anonymous">
-        <link rel="stylesheet"
-              href="assets/css/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Montserrat"
+          rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <title>Pop Culture Trivia</title>
+    <title>Illegitimate Trivia</title>
 </head>
 
 <body>
-    <div id="quiz"></div>
-    <button id="submit">Submit Quiz</button>
-    <div id="results"></div>
+    <div class="wrapper">
+        <div id="timeLeft"></div>
+        <button id="questionBlock">Submit Quiz</button>
+        <div id="answerBlock"></div>
+        <button class="btn btn-success"
+                id="start">Start Quiz</button>
+        <button class="btn btn-success"
+                id="reset">Try Again?</button>
+    </div>
 
-    <script type="text/javascript" src="assets/javascript/app.js"> </script>
+    <script type="text/javascript"
+            src="assets/javascript/app.js"> </script>
 </body>
 
 </html>
