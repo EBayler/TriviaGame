@@ -1,8 +1,8 @@
-#TriviaGame
+# TriviaGame
 
 ## Getting Started
 
-** Illegitimate Trivia **
+**Illegitimate Trivia**
 
 ##### Instructions:
 
