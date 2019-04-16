@@ -155,7 +155,7 @@ window.onload = function () {
 
             if ((numGuessedWrong + numGuessedCorrectly + numUnanswered) === numQ) {
                 $("#questionDiv").empty();
-                $("#questionDiv").html("<h3> Fun's Over! <br> Here's your score: </h3>");
+                $("#questionDiv").html("<h3> How'd You Do?: </h3>");
                 $("#questionDiv").append("<h4> Woot Woot! You know your stuff!: " + numGuessedCorrectly + "</h4>");
                 $("#questionDiv").append("<h4> Close but no cigar!: " + numGuessedWrong + "</h4>");
                 $("#questionDiv").append("<h4> Come on! You didn't even try!: " + numUnanswered + "</h4>");

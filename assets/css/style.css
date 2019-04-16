@@ -13,13 +13,10 @@ img {
     width: auto;
 }
 
-#answerDiv {
+#answerDiv, #questionDiv {
     text-align: center;
 }
 
-#questionDiv {
-    text-align: center;
-}
 
 #reset {
     visibility: visible;
@@ -48,12 +45,16 @@ p {
 }
 
 h2,
+h3,
 h4 {
     margin: 30px;
+    font-size: 22px;
+        font-weight: bolder;
+
 }
 
 .wrapper {
-    margin: 10px auto;
+    margin: 134px auto;
     background-color: rgba(255, 255, 255, 0.7);
     height: 625px;
     width: 60%;
