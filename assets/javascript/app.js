@@ -80,6 +80,8 @@ window.onload = function () {
         for (var i = 0; i < sweetQuestions.length; i++) {
             theGoods.push(sweetQuestions[i]);
         }
+        var audio = $("#bastardJams")[0];
+        audio.play();
 
     })
 
@@ -179,6 +181,8 @@ window.onload = function () {
         for (var i = 0; i < theGoods.length; i++) {
             sweetQuestions.push(theGoods[i]);
         }
+        var audio = $("#bastardJams")[0];
+        audio.play();
         runTimer();
         displayQuestion();
     })
