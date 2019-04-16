@@ -84,6 +84,8 @@ header {
     font-size: 7em;
     margin: 20px 0 20px 0;
     text-decoration: none;
+        color: rgb(252, 92, 153);
+
 }
 
 a {
@@ -94,7 +96,7 @@ a {
 }
 
 a {
-    color: #BA01FF;
+    color: whitesmoke;
     font-family: Vampiro One;
 }
 
