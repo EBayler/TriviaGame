@@ -1,12 +1,10 @@
 .answerChoice {
-    border: 1px solid rgb(45, 255, 255);
-    border-radius: 5%;
-    width: 40%;
-    color: black;
     text-align: center;
-    margin: 10px auto;
+    width: 50%;
+    margin: 18px auto;
     font-size: 20px;
-    background-color: rgb(166, 255, 218);
+    color: black;
+    background-color: rgb(252, 92, 153);
 
 }
 
@@ -15,14 +13,12 @@ img {
     width: auto;
 }
 
-#answerBlock {
+#answerDiv {
     text-align: center;
-
 }
 
-#questionBlock {
+#questionDiv {
     text-align: center;
-    font-weight: bold;
 }
 
 #reset {
@@ -33,6 +29,7 @@ body {
     background-image: url("../images/background2.jpg");
     background-size: cover;
     font-family: 'Lora', serif;
+    margin: 40px;
 }
 
 h1 {
@@ -46,14 +43,13 @@ h1 {
 p {
     margin: 10px;
     font-weight: bold;
-    color: red;
+    color: black;
     font-size: 20px;
 }
 
 h2,
 h4 {
     margin: 30px;
-    font-weight: bold;
 }
 
 .wrapper {
@@ -66,10 +62,12 @@ h4 {
 
 .btn {
     position: relative;
-    bottom: -50px;
-    background-color: rgb(166, 255, 218);
+    bottom: -280px;
+    background-color: rgb(252, 92, 153);
     color: black;
-
+}
+.btn:hover{
+    background-color: rgb(175, 255, 138);
 }
 
 @-ms-viewport {

@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    var options = [{
+    var sweetQuestions = [{
             question: "In what movie does Brad Pitt play Lieutenant Aldo Raine?",
             choices: ["Inglorious Basterds", "Fight Club", " Bastard Out Of Carolina", "The Departed"],
             answer: 0,
@@ -56,18 +56,18 @@ window.onload = function () {
         }
     ];
 
-    var correctCount = 0;
-    var wrongCount = 0;
-    var unansweredCount = 0;
+    var numGuessedCorrectly = 0;
+    var numGuessedWrong = 0;
+    var numUnanswered = 0;
     var timer = 30;
     var intervalId;
     var userGuess = "";
     var running = false;
-    var qCount = options.length;
+    var numQ = sweetQuestions.length;
     var pick;
-    var index;
-    var newArray = [];
-    var holder = [];
+    var questionI;
+    var gifArray = [];
+    var theGoods = [];
 
 
     $("#reset").hide();
@@ -77,8 +77,8 @@ window.onload = function () {
         $("#start").hide();
         displayQuestion();
         runTimer();
-        for (var i = 0; i < options.length; i++) {
-            holder.push(options[i]);
+        for (var i = 0; i < sweetQuestions.length; i++) {
+            theGoods.push(sweetQuestions[i]);
         }
 
     })
@@ -91,13 +91,13 @@ window.onload = function () {
     }
 
     function decrement() {
-        $("#timeLeft").html("<h3>Time remaining: " + timer + "</h3>");
+        $("#timeLeft").html("<h2>Time remaining: " + timer + "</h2>");
         timer--;
 
         if (timer === 0) {
-            unansweredCount++;
+            numUnanswered++;
             stop();
-            $("#answerBlock").html("<p>Time is up! The correct answer is: " + pick.choices[pick.answer] + "</p>")
+            $("#answerDiv").html("<p>Time is up! The correct answer is: " + pick.choices[pick.answer] + "</p>")
             hideGif();
         }
     }
@@ -108,59 +108,60 @@ window.onload = function () {
     }
 
     function displayQuestion() {
-        index = Math.floor(Math.random() * options.length);
-        pick = options[index];
+        questionI = Math.floor(Math.random() * sweetQuestions.length);
+        pick = sweetQuestions[questionI];
 
-        $("#questionBlock").html("<h2>" + pick.question + "</h2>");
+        $("#questionDiv").html("<h2>" + pick.question + "</h2>");
         for (var i = 0; i < pick.choices.length; i++) {
             var userChoice = $("<div>");
             userChoice.addClass("answerChoice");
             userChoice.html(pick.choices[i]);
             userChoice.attr("data-guessValue", i);
-            $("#answerBlock").append(userChoice);
+            $("#answerDiv").append(userChoice);
         }
 
+
+
+        $(".answerChoice").on("click", function () {
+            userGuess = parseInt($(this).attr("data-guessValue"));
+            if (userGuess === pick.answer) {
+                stop();
+                numGuessedCorrectly++;
+                userGuess = "";
+                $("#answerDiv").html("<p>Correct!</p>");
+                hideGif();
+            } else {
+                stop();
+                numGuessedWrong++;
+                userGuess = "",
+                    $("#answerDiv").html("<p>Not likely! <br> The correct answer is: " + pick.choices[pick.answer] + "</p>");
+                hideGif();
+            }
+
+        })
     }
-
-    $(".answerChoice").on("click", function () {
-        userGuess = parseInt($(this).attr("data-guessValue"));
-        if (userGuess === pick.answer) {
-            stop();
-            correctCount++;
-            userGuess = "";
-            $("#answerBlock").html("<p>Correct!</p>");
-            hideGif();
-        } else {
-            stop();
-            wrongCount++;
-            userGuess = "",
-                $("#answerBlock").html("<p>Not likely! The correct answer is: " + pick.choices[pick.answer] + "</p>");
-            hideGif();
-        }
-
-    })
 
 
     function hideGif() {
-        $("#answerBlock").append("<img src=" + pick.gif + ">");
-        newArray.push(pick);
-        options.splice(index, 1);
+        $("#answerDiv").append("<img src=" + pick.gif + ">");
+        gifArray.push(pick);
+        sweetQuestions.splice(questionI, 1);
 
         var hiddenGif = setTimeout(function () {
-            $("#answerBlock").empty();
+            $("#answerDiv").empty();
             timer = 30;
 
-            if ((wrongCount + correctCount + unansweredCount) === qCount) {
-                $("#questionBlock").empty();
-                $("#questionBlock").html("<h3> Game Over! Here's your score: </h3>");
-                $("#questionBlock").append("<h4> You right!: " + correctCount + "</h4>");
-                $("#questionBlock").append("<h4> It's a NO from me: " + wrongCount + "</h4>");
-                $("#questionBlock").append("<h4> Come on! You didn't even try!: " + unansweredCount + "</h4>");
+            if ((numGuessedWrong + numGuessedCorrectly + numUnanswered) === numQ) {
+                $("#questionDiv").empty();
+                $("#questionDiv").html("<h3> Fun's Over! <br> Here's your score: </h3>");
+                $("#questionDiv").append("<h4> Woot Woot! You know your stuff!: " + numGuessedCorrectly + "</h4>");
+                $("#questionDiv").append("<h4> Close but no cigar!: " + numGuessedWrong + "</h4>");
+                $("#questionDiv").append("<h4> Come on! You didn't even try!: " + numUnanswered + "</h4>");
                 $("#reset").show();
 
-                correctCount = 0;
-                wrongCount = 0;
-                unansweredCount = 0;
+                numGuessedCorrectly = 0;
+                numGuessedWrong = 0;
+                numUnanswered = 0;
             } else {
                 runTimer();
                 displayQuestion();
@@ -172,14 +173,15 @@ window.onload = function () {
 
     $("#reset").on("click", function () {
         $("#reset").hide();
-        $("#answerBlock").empty();
-        $("#questionBlock").empty();
+        $("#answerDiv").empty();
+        $("#questionDiv").empty();
 
-        for (var i = 0; i < holder.length; i++);
-        options.push(holder[i]);
+        for (var i = 0; i < theGoods.length; i++) {
+            sweetQuestions.push(theGoods[i]);
+        }
+        runTimer();
+        displayQuestion();
     })
-    runTimer();
-    displayQuestion();
 
 
 }
