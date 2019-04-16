@@ -13,7 +13,8 @@ img {
     width: auto;
 }
 
-#answerDiv, #questionDiv {
+#answerDiv,
+#questionDiv {
     text-align: center;
 }
 
@@ -49,12 +50,12 @@ h3,
 h4 {
     margin: 30px;
     font-size: 22px;
-        font-weight: bolder;
+    font-weight: bolder;
 
 }
 
 .wrapper {
-    margin: 134px auto;
+    margin: 10px auto;
     background-color: rgba(255, 255, 255, 0.7);
     height: 625px;
     width: 60%;
@@ -67,9 +68,100 @@ h4 {
     background-color: rgb(252, 92, 153);
     color: black;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: rgb(175, 255, 138);
 }
+
+#container {
+    width: 500px;
+    margin: auto;
+}
+
+/*Neon*/
+header {
+    text-align: center;
+    font-size: 7em;
+    margin: 20px 0 20px 0;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+a {
+    color: #BA01FF;
+    font-family: Vampiro One;
+}
+
+a:hover {
+    -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon6 1.5s ease-in-out infinite alternate;
+    animation: neon6 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+
+
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+/*glow for webkit*/
+
+@-webkit-keyframes neon6 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    }
+
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+    }
+}
+
+/*glow for mozilla*/
+
+@-moz-keyframes neon6 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    }
+
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+    }
+}
+
+/*glow*/
+
+
+@keyframes neon6 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    }
+
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+    }
+}
+
+/*REEEEEEEEEEESPONSIVE*/
+
+@media (max-width: 650px) {
+    #container {
+        width: 100%;
+    }
+
+    p {
+        font-size: 3.5em;
+    }
+}
+
 
 @-ms-viewport {
     width: device-width;
